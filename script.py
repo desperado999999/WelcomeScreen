@@ -1,11 +1,21 @@
-numbers=[12,5,7,8,10]
+numbers=[]
 total=0
-for n in numbers:
-    if n%2==0:
-        print(f"{n} 是偶")
+print("计算器")
+print("输入数字，输入结束，得总和与平均")
+while True:
+    userinput=input(">>>输入数字或输入‘结束’退出")
+    if userinput=="结束":
+        break
+    num=int(userinput)
+    numbers.append(num)
+    total=total+num
+    print(f"已输入{num},共{len(numbers)}")
+print("\n"+"="*20)
+print(f"共{len(numbers)}")
+for num in numbers:
+    if num%2==0:
+        print(f"{num}是偶")
     else:
-        print(f"{n}是奇")
-    total=total+n
-print("-"*10)
-print(f"这组数的总和为{total}")
-print(f"even num is:{total/len(numbers)}")
+        print(f"{num}是奇")
+print(f"总和{total}")
+print(f"平均数是：{total/len(numbers)}")
