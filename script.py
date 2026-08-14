@@ -1,6 +1,20 @@
-print("this program illustrates a chaotic function\n")
-x=float(input("enter a number between 0 and 1"))#the input value is 0.25
-for i in range(1,10):
-    x=1.3*x*(1-x)
-    print("{0:.17f}".format(x))
+
+import turtle
+tur=turtle.Turtle()
+tur.speed(6)
+tur.getscreen().bgcolor("black")
+tur.color("cyan")
+tur.penup()
+tur.goto((-200,50))
+tur.pendown()
+def star(turtle,size):
+    if size<=10:
+        return
+    else:
+        for i in range(5):
+            tur.forward(size)
+            star(turtle,size/3)
+            tur.left(216)
+star(turtle,360)
+turtle.done()
 
